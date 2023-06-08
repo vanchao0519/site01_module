@@ -1,0 +1,80 @@
+site01.home:
+  path: '/site01/home'
+  defaults:
+    _title: 'Home'
+    _controller: '\Drupal\site01\Controller\Site01Controller::home'
+  requirements:
+    _permission: 'access content'
+
+site01.about:
+  path: '/about'
+  defaults:
+    _title: 'About'
+    _controller: '\Drupal\site01\Controller\Site01Controller::about'
+  requirements:
+    _permission: 'access content'
+
+site01.pricing:
+  path: '/pricing'
+  defaults:
+    _title: 'Pricing'
+    _controller: '\Drupal\site01\Controller\Site01Controller::pricing'
+  requirements:
+    _permission: 'access content'
+
+site01.team:
+  path: '/team'
+  defaults:
+    _title: 'Team'
+    _controller: '\Drupal\site01\Controller\Site01Controller::team'
+  requirements:
+    _permission: 'access content'
+
+site01.testimonials:
+  path: '/testimonials'
+  defaults:
+    _title: 'Testimonials'
+    _controller: '\Drupal\site01\Controller\Site01Controller::testimonials'
+  requirements:
+    _permission: 'access content'
+
+site01.faq:
+  path: '/faq'
+  defaults:
+    _title: 'F.A.Q'
+    _controller: '\Drupal\site01\Controller\Site01Controller::faq'
+  requirements:
+    _permission: 'access content'
+
+site01.service_detail:
+  path: '/service-detail'
+  defaults:
+    _title: 'Service detail'
+    _controller: '\Drupal\site01\Controller\Site01Controller::service_detail'
+  requirements:
+    _permission: 'access content'
+
+site01.blog_detail:
+  path: '/blog-list/{blog}'
+  defaults:
+    _title: 'Blog'
+    _controller: '\Drupal\site01\Controller\Site01Controller::blog_detail'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
+
+site01.not_found:
+  path: '/404'
+  defaults:
+    _title: '404'
+    _controller: '\Drupal\site01\Controller\Site01Controller::not_found'
+  requirements:
+    _permission: 'access content'
+
+site01.settings_form:
+  path: '/admin/config/system/site01'
+  defaults:
+    _title: 'site01 settings'
+    _form: 'Drupal\site01\Form\SettingsForm'
+  requirements:
+    _permission: 'administer site01 configuration'

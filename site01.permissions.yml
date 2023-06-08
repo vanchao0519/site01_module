@@ -1,0 +1,36 @@
+administer site01 configuration:
+  title: 'Administer site01 configuration'
+  description: 'Optional description.'
+  restrict access: true
+
+add site01entity entities:
+  title: 'Create new Site01entity entities'
+
+administer site01entity entities:
+  title: 'Administer Site01entity entities'
+  description: 'Allow to access the administration form to configure Site01entity entities.'
+  restrict access: true
+
+delete site01entity entities:
+  title: 'Delete Site01entity entities'
+
+edit site01entity entities:
+  title: 'Edit Site01entity entities'
+
+view published site01entity entities:
+  title: 'View published Site01entity entities'
+
+view unpublished site01entity entities:
+  title: 'View unpublished Site01entity entities'
+
+view all site01entity revisions:
+  title: 'View all Site01entity revisions'
+
+revert all site01entity revisions:
+  title: 'Revert all Site01entity revisions'
+  description: 'Role requires permission <em>view Site01entity revisions</em> and <em>edit rights</em> for site01entity entities in question or <em>administer site01entity entities</em>.'
+
+delete all site01entity revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Site01entity revisions</em> and <em>delete rights</em> for site01entity entities in question or <em>administer site01entity entities</em>.'
+

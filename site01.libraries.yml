@@ -1,0 +1,10 @@
+# Custom module library for general purposes.
+site01:
+#  js:
+#    js/site01.js: {}
+  css:
+    component:
+      css/site01.css: {}
+  dependencies:
+    - core/drupalSettings
+

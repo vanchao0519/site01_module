@@ -1,0 +1,5 @@
+entity.site01_entity.add_form:
+  route_name: entity.site01_entity.add_form
+  title: 'Add Site01entity'
+  appears_on:
+    - entity.site01_entity.collection

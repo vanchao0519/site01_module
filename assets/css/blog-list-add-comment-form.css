@@ -1,0 +1,11 @@
+#edit-comment-body-0-format {
+  display: none;
+}
+
+#comment-form label[for=edit-comment-body-0-value] {
+  margin-left: 0;
+}
+
+#comment-form .form-required::after {
+  display: none;
+}

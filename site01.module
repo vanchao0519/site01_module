@@ -1,0 +1,61 @@
+<?php
+
+use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\Core\Url;
+
+/**
+ * @file
+ * Primary module hooks for site01 module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+/**
+ * Provides a theme definition for custom content entity site01
+ *
+ * {@inheritdoc}
+ */
+function site01_theme($existing, $type, $theme, $path) {
+  $theme = [];
+
+  $theme['site01_entity'] = [
+    'path' => $path . '/templates',
+    'template' => 'site01_entity',
+    'render element' => 'elements',
+  ];
+
+  return $theme;
+}
+
+function template_preprocess_site01_entity(&$variables) {
+  $variables['content'] = [];
+  foreach (\Drupal\Core\Render\Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+  /** @var \Drupal\site01\Entity\Site01EntityInterface $entity */
+  $entity = $variables['elements']['#site01_entity'];
+  //provide the label
+  $variables['label'] = $entity->label();
+  //provide the alias
+  $entityId = $entity->id();
+//  $variables['url'] = $entity->toUrl()->toString();
+  $variables['url'] = "/blog-list/$entityId";
+  $variables['created'] = $entity->getCreatedTime();
+  /** @var \Drupal\user\Entity\User $user */
+  $user = $entity->getOwner();
+  $variables['author_avatar'] = $user->field_avatar;
+  $variables['author_name'] = $user->name->value;
+}
+
+function site01_theme_suggestions_site01_entity_alter( array &$suggestions, array $vars, $hook ) {
+  /** @var \Drupal\site01\Entity\Site01Entity $site01_entity */
+  if ( $site01_entity = $vars['elements']['#site01_entity'] ) {
+    if (isset($vars['view_mode'])) {
+      $suggestions[] = 'site01_entity__' . $vars['#view_mode'];
+    }
+  }
+}
+

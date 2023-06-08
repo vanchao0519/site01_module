@@ -1,0 +1,20 @@
+site01.settings_form:
+  title: site01
+  description: Configure site01.
+  parent: system.admin_config_system
+  route_name: site01.settings_form
+  weight: 10
+
+# Site01entity menu items definition
+entity.site01_entity.collection:
+  title: 'Site01entity list'
+  route_name: entity.site01_entity.collection
+  description: 'List Site01entity entities'
+  parent: system.admin_structure
+  weight: 100
+
+site01_entity.admin.structure.settings:
+  title: 'Site01entity settings'
+  description: 'Configure Site01entity entities'
+  route_name: site01_entity.settings
+  parent: system.admin_structure
